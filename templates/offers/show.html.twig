@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail de l'offre {% endblock %}
+
+{% block body %}
+
+    <h1>Détail de l'offre N°{{ offer.id }}</h1>
+
+    <p>Date de publication: {{ offer.createdAt|date("d/m/Y") }}</p>
+    <p>Department : {{ offer.department}} </p>
+    <p>Description: {{ offer.description }}</p>
+    <p>ZipCode: {{ offer.zipcode }}</p>
+    <p>City: {{ offer.city }}</p>
+    <p>Company: {{ offer.company }}</p>
+    <p>Contact Email: {{ offer.contactEmail }}</p>
+    <p>Reférence: {{ offer.reference }}</p>
+    <p>Latitude: {{ offer.latitude }}</p>
+    <p>Longitude: {{ offer.longitude }}</p>
+
+
+{#<form method="post" action="{{ path('app_offers_candidate') }}">#}
+{#    <a href="{{ path('app_offers_candidate') }}">Postuler</a>#}
+{#</form>#}
+
+{% endblock %}

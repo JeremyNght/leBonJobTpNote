@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Offres dans le département {% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Offres dans le département </h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col">Entreprise</th>
+                        <th scope="col">Ville</th>
+                        <th scope="col">Département</th>
+                        <th scope="col">Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for offer in offers %}
+                        <tr>
+                            <td>{{ offer.company }}</td>
+                            <td>{{ offer.city }}</td>
+                            <td>{{ offer.department }}</td>
+                            <td>{{ offer.description }}</td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+                {% if offers|length == 0 %}
+                    <p>Il n'y a pas d'offres dans ce département</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

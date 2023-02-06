@@ -6,6 +6,12 @@
 parameters:
 
 services:
+    App\Service\PoleEmploiService:
+        public: true
+
+    App\Command\ImportOffersCommand:
+        tags:
+            - { name: console.command }
     # default configuration for services in *this* file
     _defaults:
         autowire: true      # Automatically injects dependencies in your services.

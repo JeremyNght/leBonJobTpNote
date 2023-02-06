@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello JobOfferController!{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        {% for offer in offers %}
+            <p>{{ offer.company }} {{ offer.city }} {{ offer.department }} {{ offer.description }}</p>
+        {% endfor %}
+{#        Si pas de job #}
+        {% if offers is empty %}
+            <p>Il n'y a pas de job pour le moment</p>
+        {% endif %}
+    </div>
+{% endblock %}

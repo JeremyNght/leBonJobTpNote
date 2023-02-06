@@ -49,7 +49,7 @@ class Offer
     #[ORM\Column]
     private ?float $longitude = null;
 
-    #[ORM\OneToMany(mappedBy: 'offer', targetEntity: Candidate::class)]
+    #[ORM\OneToMany(mappedBy: 'offers', targetEntity: Candidate::class)]
     private Collection $candidates;
 
     public function __construct()
